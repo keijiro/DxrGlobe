@@ -219,6 +219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2133090579}
+  - {fileID: 1897387545}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -279,6 +280,7 @@ PlayableDirector:
     - 0f656917b81169b44af8ec111647a411: {fileID: 560968765}
     - e1fa75db551beb54bb21510499fa7255: {fileID: 886487295}
     - d5d8eae0735b7344dbee536a6221da28: {fileID: 2133090577}
+    - b3073a19423145040b28f79dfd3d6beb: {fileID: 1897387544}
 --- !u!4 &524394206
 Transform:
   m_ObjectHideFlags: 0
@@ -1340,6 +1342,63 @@ Transform:
   m_Father: {fileID: 2093319561}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1897387544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897387545}
+  - component: {fileID: 1897387546}
+  m_Layer: 0
+  m_Name: Upward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1897387545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897387544}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 151277541}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1897387546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897387544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f2632784ddfec428c0964019eed154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config:
+    frequency: 5
+    spin: 0
+    distribution: 0.3
+    extent:
+      x: 35
+      y: 5
+      z: 80
+    scale: 1
+    seed: 525
+  _instanceCount: 100
+  _meshes:
+  - {fileID: -8670151273213183110, guid: c493096403228e54eb1358c749b68176, type: 3}
+  _material: {fileID: 2100000, guid: 4215c98ed6aa7374ea320ecdc96d8a54, type: 2}
 --- !u!1 &2093319560
 GameObject:
   m_ObjectHideFlags: 0
