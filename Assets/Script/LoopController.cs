@@ -7,13 +7,14 @@ using System.Linq;
 namespace DxrGlobe {
 
 [ExecuteInEditMode]
-public sealed partial class WallController :
+public sealed partial class LoopController :
   MonoBehaviour, ITimeControl, IPropertyPreview
 {
     #region Editable attributes
 
     [SerializeField] Config _config;
-    [SerializeField] Mesh _mesh;
+    [SerializeField] int _instanceCount = 100;
+    [SerializeField] Mesh[] _meshes;
     [SerializeField] Material _material;
 
     #endregion
@@ -46,10 +47,11 @@ public sealed partial class WallController :
     bool Prepare()
     {
         if (_taa.isCreated) return true;
-        if (_mesh == null || _material == null) return false;
-        var e = Enumerable.Range(0, _config.TotalInstanceCount).
-                Select(_ => Utils.CreateMeshRendererGameObject
-                              (_mesh, _material, transform));
+        if (_meshes == null || _meshes.Length == 0) return false;
+        if (_material == null) return false;
+        var e = Enumerable.Range(0, _instanceCount).
+          Select(i => Utils.CreateMeshRendererGameObject
+                        (_meshes[i % _meshes.Length], _material, transform));
         _taa = new TransformAccessArray(e.Select(go => go.transform).ToArray());
         return true;
     }
