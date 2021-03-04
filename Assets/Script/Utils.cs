@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Jobs;
 
@@ -35,6 +36,34 @@ static class Utils
                 Object.Destroy(xform.gameObject);
             else
                 Object.DestroyImmediate(xform.gameObject);
+        }
+    }
+}
+
+sealed class MotionVectorLimitter
+{
+    (Transform xform, Renderer render, Vector3 prev) [] _objects;
+
+    public MotionVectorLimitter(Transform root)
+      => _objects =
+           root.GetComponentsInChildren<Renderer>().
+           Select(r => (r.GetComponent<Transform>(), r, Vector3.zero)).
+           ToArray();
+
+    public void CheckLimit(float threshold)
+    {
+        threshold *= threshold;
+
+        for (var i = 0; i < _objects.Length; i++)
+        {
+            var pos = _objects[i].xform.position;
+
+            _objects[i].render.motionVectorGenerationMode =
+              (pos - _objects[i].prev).sqrMagnitude > threshold
+                ? MotionVectorGenerationMode.ForceNoMotion :
+                  MotionVectorGenerationMode.Object;
+
+            _objects[i].prev = pos;
         }
     }
 }

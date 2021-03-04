@@ -10,34 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Sky
+  m_Name: SkyBoost
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7004647232612784339}
   - {fileID: 8089183456943622359}
---- !u!114 &7004647232612784339
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: VisualEnvironment
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  skyType:
-    m_OverrideState: 1
-    m_Value: 1
-  skyAmbientMode:
-    m_OverrideState: 1
-    m_Value: 1
-  fogType:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &8089183456943622359
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -53,8 +29,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   rotation:
-    m_OverrideState: 1
-    m_Value: 336
+    m_OverrideState: 0
+    m_Value: 0
     min: 0
     max: 360
   skyIntensityMode:
@@ -62,7 +38,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: -3
+    m_Value: 2
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -88,8 +64,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   hdriSky:
-    m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 2a1fca30f3dd8b74c8c19fca8a12c9d2, type: 3}
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
   enableDistortion:
     m_OverrideState: 0
     m_Value: 0

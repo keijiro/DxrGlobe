@@ -22,6 +22,7 @@ public sealed partial class LoopController :
     #region Private fields
 
     TransformAccessArray _taa;
+    MotionVectorLimitter _limitter;
     float _time;
     bool _wantsCleanup;
 
@@ -53,6 +54,7 @@ public sealed partial class LoopController :
           Select(i => Utils.CreateMeshRendererGameObject
                         (_meshes[i % _meshes.Length], _material, transform));
         _taa = new TransformAccessArray(e.Select(go => go.transform).ToArray());
+        _limitter = new MotionVectorLimitter(transform);
         return true;
     }
 
@@ -63,6 +65,7 @@ public sealed partial class LoopController :
             Utils.DestroyAllGameObjects(_taa);
             _taa.Dispose();
         }
+        _limitter = null;
         _wantsCleanup = false;
     }
 
@@ -77,6 +80,7 @@ public sealed partial class LoopController :
     {
         if (_wantsCleanup) Cleanup();
         if (Prepare()) new UpdateJob(_config, _time).Schedule(_taa).Complete();
+        _limitter?.CheckLimit(_config.extent.z / 2);
     }
 
     void OnDisable()
