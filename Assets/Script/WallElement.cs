@@ -6,9 +6,10 @@ using UnityEngine.Jobs;
 using Klak.Math;
 
 namespace DxrGlobe {
+partial class WallController {
 
 [System.Serializable]
-public struct FragmentConfig
+public struct Config
 {
     public int2 repeats;
     public float2 dimensions;
@@ -32,12 +33,12 @@ public struct FragmentConfig
 }
 
 [BurstCompile]
-struct FragmentUpdateJob : IJobParallelForTransform
+struct UpdateJob : IJobParallelForTransform
 {
-    FragmentConfig _config;
+    Config _config;
     float _time;
 
-    public FragmentUpdateJob(in FragmentConfig config, float time)
+    public UpdateJob(in Config config, float time)
     {
         _config = config;
         _time = time;
@@ -77,4 +78,5 @@ struct FragmentUpdateJob : IJobParallelForTransform
     }
 }
 
+} // partial class WallController
 } // namespace DxrGlobe

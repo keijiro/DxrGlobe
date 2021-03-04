@@ -6,11 +6,12 @@ using UnityEngine.Timeline;
 namespace DxrGlobe {
 
 [ExecuteInEditMode]
-sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
+public sealed partial class WallController :
+  MonoBehaviour, ITimeControl, IPropertyPreview
 {
     #region Editable attributes
 
-    [SerializeField] FragmentConfig _config;
+    [SerializeField] Config _config;
     [SerializeField] Mesh _mesh;
     [SerializeField] Material _material;
 
@@ -41,7 +42,6 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
 
     #region Fragment object population/destruction
 
-
     bool Prepare()
     {
         if (_taa.isCreated) return true;
@@ -54,7 +54,7 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
         {
             // We have to insert an empty game object to avoid an issue where
             // prevents game objects with HideFlags from getting ray-traced.
-            var go1 = new GameObject("Fragment");
+            var go1 = new GameObject("Element");
             var go2 = new GameObject("Renderer", typeof(MeshFilter), typeof(MeshRenderer));
 
             go1.hideFlags = HideFlags.HideAndDontSave;
@@ -91,8 +91,7 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
     void LateUpdate()
     {
         if (_wantsCleanup) Cleanup();
-        if (Prepare())
-            new FragmentUpdateJob(_config, _time).Schedule(_taa).Complete();
+        if (Prepare()) new UpdateJob(_config, _time).Schedule(_taa).Complete();
     }
 
     void OnDisable()
