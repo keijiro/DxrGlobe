@@ -274,12 +274,15 @@ PlayableDirector:
     value: {fileID: 1633769839}
   - key: {fileID: -3397541425365684956, guid: 3527d5d202d745d4593ded043ddebf67, type: 2}
     value: {fileID: 151277540}
+  - key: {fileID: -7040526011852747270, guid: 3527d5d202d745d4593ded043ddebf67, type: 2}
+    value: {fileID: 2077395791}
   m_ExposedReferences:
     m_References:
     - 0c422093008daa045a6d0791198deab6: {fileID: 1088860631}
     - 0f656917b81169b44af8ec111647a411: {fileID: 560968765}
     - e1fa75db551beb54bb21510499fa7255: {fileID: 886487295}
     - d5d8eae0735b7344dbee536a6221da28: {fileID: 2133090577}
+    - cc396b096911afe448834966d158238b: {fileID: 2077395790}
     - b3073a19423145040b28f79dfd3d6beb: {fileID: 1897387544}
 --- !u!4 &524394206
 Transform:
@@ -1399,6 +1402,77 @@ MonoBehaviour:
   _meshes:
   - {fileID: -8670151273213183110, guid: c493096403228e54eb1358c749b68176, type: 3}
   _material: {fileID: 2100000, guid: 4215c98ed6aa7374ea320ecdc96d8a54, type: 2}
+--- !u!1 &2077395790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2077395793}
+  - component: {fileID: 2077395792}
+  - component: {fileID: 2077395791}
+  m_Layer: 0
+  m_Name: Atom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &2077395791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077395790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2077395792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077395790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74752d40b104b65448fa457c46ebdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config:
+    frequency: 1
+    radius: 1
+    scale: 1
+    seed: 370
+  _instanceCount: 30
+  _mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  _material: {fileID: 2100000, guid: 48eb9aa9ae2a8634ebd5d5ef29c77e78, type: 2}
+--- !u!4 &2077395793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077395790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093319560
 GameObject:
   m_ObjectHideFlags: 0
