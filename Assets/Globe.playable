@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_Name: RecorderClip
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 2
+  take: 4
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -1886,9 +1886,9 @@ MonoBehaviour:
     m_Selected: gameViewInputSettings
     gameViewInputSettings:
       m_OutputResolution:
-        m_CustomWidth: 1024
-        m_CustomHeight: 1024
-        imageHeight: 1080
+        m_CustomWidth: 3628
+        m_CustomHeight: 2562
+        imageHeight: 2147483647
         maxSupportedHeight: 2160
         m_AspectRatio:
           m_CustomAspectX: 1
